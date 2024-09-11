@@ -94,15 +94,44 @@ input {
 }
 
 .slider-description .description {
-    display: none;
     color: white;
+    transition: all 2s ease-in-out;
 }
 
-#first-mem:checked ~ .slider .slider-bottom .slider-description .desc-1,
-#second-mem:checked ~  .slider .slider-bottom .slider-description .desc-2,
-#third-mem:checked ~ .slider .slider-bottom .slider-description .desc-3,
-#fourth-mem:checked ~ .slider .slider-bottom .slider-description .desc-4 {
-    display: block;
+.slider-description {
+    height: 2rem;
+    overflow-y: hidden;
+}
+
+.desc-wrapper {
+    display: flex;
+    flex-direction: column;
+    transform: translate3d(0, 0, 0);
+    transition: transform 1.2s ease-in-out;
+}
+
+.description {
+    height: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+#first-mem:checked ~ .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, 0, 0);
+}
+
+#second-mem:checked ~  .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, -2rem, 0);
+}
+
+#third-mem:checked ~ .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, -4rem, 0);
+}
+
+#fourth-mem:checked ~ .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, -6rem, 0);
 }
 
 .slider-btns label {
