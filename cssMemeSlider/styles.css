@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 700px;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75em;
+    background-color: cadetblue;
+    padding: 1em;
+    gap: 2em;
+}
+
+.slider-img {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    transition: all 1s ease-in-out;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-repeat: no-repeat;
+    border-radius: 0.75em;
+}
+
+.img-1 {
+    background-image: url('./img/first.jpg');
+    background-size: cover;
+    background-position: center;
+}
+  
+.img-2 {
+    background-image: url('./img/second.jpg');
+    background-size: cover;
+}
+  
+.img-3 {
+    background-image: url('./img/third.png');
+    background-size: cover;
+    background-position: center;
+}
+  
+.img-4 {
+    background-image: url('./img/fourth.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+input#first-mem:checked ~ .slider-img .img-1,
+input#second-mem:checked ~ .slider-img .img-2,
+input#third-mem:checked ~ .slider-img .img-3,
+input#fourth-mem:checked ~ .slider-img .img-4 {
+  display: block;
+}
+
+.slider-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    display: none;
+}
+
+.slider-description .description {
+    display: none;
+    color: white;
+}
+
+#first-mem:checked ~ .slider-bottom .slider-description .desc-1,
+#second-mem:checked ~ .slider-bottom .slider-description .desc-2,
+#third-mem:checked ~ .slider-bottom .slider-description .desc-3,
+#fourth-mem:checked ~ .slider-bottom .slider-description .desc-4 {
+    display: block;
+}
+
+.slider-btns label {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: #5f19c8;
+    cursor: pointer;
+    border: 3px solid #5f19c8;
+}
