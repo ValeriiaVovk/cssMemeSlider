@@ -18,29 +18,29 @@ body {
 
 .container {
     width: 700px;
+    overflow: hidden;
+    padding: 1em;
+    background-color: cadetblue;
 }
 
 .slider {
     display: flex;
     flex-direction: column;
     border-radius: 0.75em;
-    background-color: cadetblue;
-    padding: 1em;
     gap: 2em;
+    overflow: hidden;
 }
 
 .slider-img {
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    width: 400%;
     height: 400px;
-    transition: all 1s ease-in-out;
+    transition: all 1.2s ease-in-out;
 }
 
 .image {
-    width: 100%;
+    flex: 0 0 25%;
     height: 100%;
-    display: none;
     background-repeat: no-repeat;
     border-radius: 0.75em;
 }
@@ -68,11 +68,20 @@ body {
     background-size: cover;
 }
 
-input#first-mem:checked ~ .slider-img .img-1,
-input#second-mem:checked ~ .slider-img .img-2,
-input#third-mem:checked ~ .slider-img .img-3,
-input#fourth-mem:checked ~ .slider-img .img-4 {
-  display: block;
+input#first-mem:checked ~ .slider .slider-img {
+    transform: translateX(0);
+}
+  
+input#second-mem:checked ~ .slider .slider-img {
+    transform: translateX(-25%);
+}
+  
+input#third-mem:checked ~ .slider .slider-img {
+    transform: translateX(-50%);
+}
+  
+input#fourth-mem:checked ~ .slider .slider-img {
+    transform: translateX(-75%);
 }
 
 .slider-bottom {
@@ -89,10 +98,10 @@ input {
     color: white;
 }
 
-#first-mem:checked ~ .slider-bottom .slider-description .desc-1,
-#second-mem:checked ~ .slider-bottom .slider-description .desc-2,
-#third-mem:checked ~ .slider-bottom .slider-description .desc-3,
-#fourth-mem:checked ~ .slider-bottom .slider-description .desc-4 {
+#first-mem:checked ~ .slider .slider-bottom .slider-description .desc-1,
+#second-mem:checked ~  .slider .slider-bottom .slider-description .desc-2,
+#third-mem:checked ~ .slider .slider-bottom .slider-description .desc-3,
+#fourth-mem:checked ~ .slider .slider-bottom .slider-description .desc-4 {
     display: block;
 }
 
