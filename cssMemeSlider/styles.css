@@ -158,13 +158,18 @@ input {
     height: 60%;
     border-radius: 50%;
     background-color: rgb(103, 187, 255);
-    border: 2.5px solid rgb(103, 187, 255);
+    border: 0.15rem solid rgb(103, 187, 255);
     transition: all 1s ease-in-out;
 }
 
 label:hover .dot {
     background-color: white;
-    border: 2.5px solid white;
+    border: 0.15rem solid white;
+}
+
+label:active .dot {
+    background-color: rgb(141, 141, 141);
+    border: 0.15rem solid rgb(141, 141, 141);
 }
 
 #first-mem:checked ~ .slider .slider-bottom .slider-btns .label-first > .dot {
