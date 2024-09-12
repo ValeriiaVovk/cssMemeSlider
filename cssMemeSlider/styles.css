@@ -87,6 +87,7 @@ input#fourth-mem:checked ~ .slider .slider-img {
 .slider-bottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 input {
@@ -134,12 +135,51 @@ input {
     transform: translate3d(0, -6rem, 0);
 }
 
+.slider-btns {
+    display: flex;
+    align-items: center;
+    column-gap: 0.2rem;
+}
+
 .slider-btns label {
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    background: #5f19c8;
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline-color: transparent;
+    transition: all 1s ease-in-out;
     cursor: pointer;
-    border: 3px solid #5f19c8;
+}
+
+.dot {
+    flex-shrink: 0;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: rgb(103, 187, 255);
+    border: 2.5px solid rgb(103, 187, 255);
+    transition: all 1s ease-in-out;
+}
+
+label:hover .dot {
+    background-color: white;
+    border: 2.5px solid white;
+}
+
+#first-mem:checked ~ .slider .slider-bottom .slider-btns .label-first > .dot {
+    background-color: black;
+}
+
+#second-mem:checked ~ .slider .slider-bottom .slider-btns .label-second > .dot {
+    background-color: black;
+}
+
+#third-mem:checked ~ .slider .slider-bottom .slider-btns .label-third > .dot {
+    background-color: black;
+}
+
+#fourth-mem:checked ~ .slider .slider-bottom .slider-btns .label-fourth > .dot {
+    background-color: black;
 }
