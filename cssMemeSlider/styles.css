@@ -17,10 +17,11 @@ body {
 }
 
 .container {
-    width: 700px;
+    width: 70vw;
     overflow: hidden;
     padding: 1em;
     background-color: cadetblue;
+    border-radius: 0.75em;
 }
 
 .slider {
@@ -34,7 +35,7 @@ body {
 .slider-img {
     display: flex;
     width: 400%;
-    height: 400px;
+    height: 50vh;
     transition: all 1.2s ease-in-out;
 }
 
@@ -45,27 +46,25 @@ body {
     border-radius: 0.75em;
 }
 
+.img-1, .img-2, .img-3, .img-4 {
+    background-size: contain;
+    background-position: center;
+}
+
 .img-1 {
     background-image: url('./img/first.jpg');
-    background-size: cover;
-    background-position: center;
 }
   
 .img-2 {
     background-image: url('./img/second.jpg');
-    background-size: cover;
 }
   
 .img-3 {
     background-image: url('./img/third.png');
-    background-size: cover;
-    background-position: center;
 }
   
 .img-4 {
     background-image: url('./img/fourth.jpg');
-    background-position: center;
-    background-size: cover;
 }
 
 input#first-mem:checked ~ .slider .slider-img {
@@ -182,4 +181,24 @@ label:hover .dot {
 
 #fourth-mem:checked ~ .slider .slider-bottom .slider-btns .label-fourth > .dot {
     background-color: black;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 80vw;
+    }
+
+    .slider-img {
+        height: 40vh;
+    }
+
+    .slider-bottom {
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+    .slider-description {
+        align-self: flex-start;
+    }
 }
