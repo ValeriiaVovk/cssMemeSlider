@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 70vw;
+    overflow: hidden;
+    padding: 1em;
+    background-color: cadetblue;
+    border-radius: 0.75em;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75em;
+    gap: 2em;
+    overflow: hidden;
+}
+
+.slider-img {
+    display: flex;
+    width: 400%;
+    height: 50vh;
+    transition: all 1.2s ease-in-out;
+}
+
+.image {
+    flex: 0 0 25%;
+    height: 100%;
+    background-repeat: no-repeat;
+    border-radius: 0.75em;
+}
+
+.img-1, .img-2, .img-3, .img-4 {
+    background-size: contain;
+    background-position: center;
+}
+
+.img-1 {
+    background-image: url('./img/first.jpg');
+}
+  
+.img-2 {
+    background-image: url('./img/second.jpg');
+}
+  
+.img-3 {
+    background-image: url('./img/third.png');
+}
+  
+.img-4 {
+    background-image: url('./img/fourth.jpg');
+}
+
+input#first-mem:checked ~ .slider .slider-img {
+    transform: translateX(0);
+}
+  
+input#second-mem:checked ~ .slider .slider-img {
+    transform: translateX(-25%);
+}
+  
+input#third-mem:checked ~ .slider .slider-img {
+    transform: translateX(-50%);
+}
+  
+input#fourth-mem:checked ~ .slider .slider-img {
+    transform: translateX(-75%);
+}
+
+.slider-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    display: none;
+}
+
+.slider-description .description {
+    color: white;
+    transition: all 2s ease-in-out;
+}
+
+.slider-description {
+    height: 2rem;
+    overflow-y: hidden;
+}
+
+.desc-wrapper {
+    display: flex;
+    flex-direction: column;
+    transform: translate3d(0, 0, 0);
+    transition: transform 1.2s ease-in-out;
+}
+
+.description {
+    height: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+#first-mem:checked ~ .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, 0, 0);
+}
+
+#second-mem:checked ~  .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, -2rem, 0);
+}
+
+#third-mem:checked ~ .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, -4rem, 0);
+}
+
+#fourth-mem:checked ~ .slider .slider-bottom .slider-description .desc-wrapper {
+    transform: translate3d(0, -6rem, 0);
+}
+
+.slider-btns {
+    display: flex;
+    align-items: center;
+    column-gap: 0.2rem;
+}
+
+.slider-btns label {
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline-color: transparent;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+.dot {
+    flex-shrink: 0;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: rgb(103, 187, 255);
+    border: 0.15rem solid rgb(103, 187, 255);
+    transition: all 1s ease-in-out;
+}
+
+label:hover .dot {
+    background-color: white;
+    border: 0.15rem solid white;
+}
+
+label:active .dot {
+    background-color: rgb(141, 141, 141);
+    border: 0.15rem solid rgb(141, 141, 141);
+}
+
+#first-mem:checked ~ .slider .slider-bottom .slider-btns .label-first > .dot {
+    background-color: black;
+}
+
+#second-mem:checked ~ .slider .slider-bottom .slider-btns .label-second > .dot {
+    background-color: black;
+}
+
+#third-mem:checked ~ .slider .slider-bottom .slider-btns .label-third > .dot {
+    background-color: black;
+}
+
+#fourth-mem:checked ~ .slider .slider-bottom .slider-btns .label-fourth > .dot {
+    background-color: black;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 80vw;
+    }
+
+    .slider-img {
+        height: 40vh;
+    }
+
+    .slider-bottom {
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+    .slider-description {
+        align-self: flex-start;
+    }
+}
